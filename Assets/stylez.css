@@ -1,0 +1,16 @@
+h1 {
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+.city {
+    padding-top: 20px;
+}
+
+.submit {
+    margin: 10px;
+    border: 1px solid grey;
+    background-color: black;
+    color: white
+}
