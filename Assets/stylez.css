@@ -4,6 +4,11 @@ h1 {
     color: white;
 }
 
+div {
+    font-weight: bold;
+    font-size: large;
+}
+
 .city {
     padding-top: 20px;
 }
