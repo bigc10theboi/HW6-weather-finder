@@ -2,11 +2,13 @@ h1 {
     text-align: center;
     background-color: black;
     color: white;
+    border: 3px solid grey;
 }
 
 div {
     font-weight: bold;
     font-size: large;
+    padding: 5px;
 }
 
 .city {
