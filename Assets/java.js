@@ -73,11 +73,7 @@ function show2(data){
 var now = moment();
 var dateFormat = "MM/DDDD/YYYY";
 var convertedDate = moment(now, dateFormat);
-    //console.log(convertedDate.format("MM/DD/YY hh:mm"));
-    //console.log(convertedDate.format("MM - Do - YY"));
 var newDate = moment();
-    //console.log(newDate.diff(convertedDate, "days"));
-
 //function to display date//
 function displayCurrentDate() {
   var currentDate = moment().format("DDD, MMMM, YYYY");
