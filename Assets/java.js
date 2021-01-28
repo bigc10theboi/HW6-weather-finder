@@ -51,17 +51,21 @@ function show(data){
            "<h4>Description: " + data.weather[0].description +"</h4>" +
            "<h4>Temperature: " + data.main.temp + " ˚F</h4>" +
            "<h4>Humidity: " + data.main.humidity + "%</h4>" +
-           "<h4>Wind Speed:" + data.wind.speed + " mph</h4>" +
+           "<h4>Wind Speed: " + data.wind.speed + " mph</h4>" +
            "<img src=http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png>"
 
 };
 
 function show2(data){
+    for (let i = 0; i < "#fiveday".length; i++) {
+        const element = array[i];
+        
+    }
     return "<h4>Weather: " + data.weather[0].main +"</h4>" +
            "<h4>Description: " + data.weather[0].description +"</h4>" +
            "<h4>Temperature: " + data.main.temp + " ˚F</h4>" +
            "<h4>Humidity: " + data.main.humidity + "%</h4>" +
-           "<h4>Wind Speed:" + data.wind.speed + " mph</h4>" +
+           "<h4>Wind Speed: " + data.wind.speed + " mph</h4>" +
            "<img src=http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png>"
 
 };
