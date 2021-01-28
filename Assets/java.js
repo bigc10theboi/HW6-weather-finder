@@ -42,5 +42,16 @@ $(document).ready(function() {
     });
 });
 
+function show(data){
+    return "<header>Current Weather " + data.name + ", " + data.sys.country +"</header>" +
+           "<h3>Weather: " + data.weather[0].main +"</h3>" +
+           "<h3>Description: " + data.weather[0].description +"</h3>" +
+           "<h3>Temperature: " + data.main.temp + "˚F</h3>" +
+           "<h3>Humidity: " + data.main.humidity + "</h3>" +
+           "<h3>Wind Speed:" + data.wind.speed + "</h3>" +
+           "<img src=http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png>"
+
+};
+
         var queryURL = "https://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=4396c33210ea436c01b4d4cc2a212e09";
 

@@ -1,23 +1,35 @@
+body {
+    background-image: url(weather.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
 h1 {
     text-align: center;
     background-color: black;
-    color: white;
+    color: rgb(241, 251, 93);
     border: 3px solid grey;
+}
+
+header{
+    color: rgb(241, 251, 93)
 }
 
 div {
     font-weight: bold;
     font-size: large;
     padding: 5px;
-}
-
-.city {
-    padding-top: 20px;
+    color: rgb(241, 251, 93)
 }
 
 .search {
     margin: 10px;
     border: 2px solid grey;
     background-color: black;
-    color: white
+    color:  rgb(241, 251, 93)
 }
+
+button:hover {
+    background-color: grey;
+    color: rgb(241, 251, 93);
+  }
