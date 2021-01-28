@@ -70,7 +70,7 @@ function show(data){
            "<h4>Temperature: " + data.main.temp + " ˚F</h4>" +
            "<h4>Humidity: " + data.main.humidity + "%</h4>" +
            "<h4>Wind Speed: " + data.wind.speed + " mph</h4>" +
-           "<h4>UV Index: " + data.main.uv + "</h4>" +
+           "<h4>UV Index: " + data.main.uvi + "</h4>" +
            "<img src=http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png>"
 
 };
@@ -83,10 +83,28 @@ function show2(data){
            "<h4>Temperature: " + data.main.temp + " ˚F</h4>" +
            "<h4>Humidity: " + data.main.humidity + "%</h4>" +
            "<h4>Wind Speed: " + data.wind.speed + " mph</h4>" +
-           "<h4>UV Index: " + data.main.uv + "</h4>" +
+           "<h4> UV Index: " + data.main.uvi + "</h4>" +
            "<img src=http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png>"
 
 };
+
+//function to display UV color
+// function colors() {
+//     $(".h4").each(function () {
+//         var UV = data.main.uvi;
+  
+//         if (UV <= 4) {
+//             $(this).addClass("favorable")
+//         }
+//         else if (UV <= 8) {
+//             $(this).addClass("moderate");
+//         }
+//         else if (UV > 8) {
+//             $(this).addClass("severe");
+//         }
+//     })
+// }
+// colors();
 
 //code for moment date
 var now = moment();

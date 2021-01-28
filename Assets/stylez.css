@@ -12,16 +12,16 @@ h1 {
 }
 
 header{
-    color: rgb(255, 255, 255)
+    color: white
 }
 
 div {
     font-weight: bold;
     font-size: large;
     padding: 5px;
-    color: rgb(255, 255, 255);
-    background: black ;
+    color: white;
     opacity: .8;
+    background: black;
 }
 
 .current, .future {
@@ -34,4 +34,14 @@ div {
 button:hover {
     background-color: grey;
     color: rgb(241, 251, 93);
+}
+
+.favorable {
+    color: green;
   }
+.moderate {
+    color: orange;
+}
+.severe {
+    color: red;
+}
