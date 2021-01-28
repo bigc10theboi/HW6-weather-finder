@@ -57,10 +57,9 @@ function show(data){
 };
 
 function show2(data){
-    for (let i = 0; i < "#fiveday".length; i++) {
-        const element = array[i];
-        
-    }
+    // for (var i = 0; i < "#fiveday".length; i++) {
+    //     "Day " + "#fiveday"[i];
+    // }
     return "<h4>Weather: " + data.weather[0].main +"</h4>" +
            "<h4>Description: " + data.weather[0].description +"</h4>" +
            "<h4>Temperature: " + data.main.temp + " ˚F</h4>" +
@@ -70,3 +69,18 @@ function show2(data){
 
 };
 
+//code for moment date
+var now = moment();
+var dateFormat = "MM/DDDD/YYYY";
+var convertedDate = moment(now, dateFormat);
+    //console.log(convertedDate.format("MM/DD/YY hh:mm"));
+    //console.log(convertedDate.format("MM - Do - YY"));
+var newDate = moment();
+    //console.log(newDate.diff(convertedDate, "days"));
+
+//function to display date//
+function displayCurrentDate() {
+  var currentDate = moment().format("DDD, MMMM, YYYY");
+  $("#currentDay").text(currentDate);
+}
+displayCurrentDate();
