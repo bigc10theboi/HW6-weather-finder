@@ -1,3 +1,4 @@
+//function for retrieving weather data from API
 $(document).ready(function() {
     $('.search').click(function() {
         var key = '4396c33210ea436c01b4d4cc2a212e09';
@@ -15,12 +16,12 @@ $(document).ready(function() {
             }
         
         });
-        var submit = $(".submit");
-        console.log(submit);
-        submit.on("click", function() {
+        var search = $(".search");
+        console.log(search);
+        search.on("click", function() {
             console.log("click");
             var task = $(this)
-            .siblings("#city-name")
+            .siblings("#cityName")
             .val();
             var searchCity = $(this).attr("id");
             localStorage.setItem(searchCity, task);
@@ -34,7 +35,7 @@ $(document).ready(function() {
                 console.log(data)
                 for(var i =0; i < list.length; i += 8 ){
                     var infoHTML = show(list[i]);
-                    $("#five-day").append(infoHTML); 
+                    $("#fiveDay").append(infoHTML); 
                 }
             }
         
@@ -42,16 +43,15 @@ $(document).ready(function() {
     });
 });
 
+//function to display data
 function show(data){
     return "<header>Current Weather " + data.name + ", " + data.sys.country +"</header>" +
            "<h3>Weather: " + data.weather[0].main +"</h3>" +
            "<h3>Description: " + data.weather[0].description +"</h3>" +
-           "<h3>Temperature: " + data.main.temp + "˚F</h3>" +
-           "<h3>Humidity: " + data.main.humidity + "</h3>" +
-           "<h3>Wind Speed:" + data.wind.speed + "</h3>" +
+           "<h3>Temperature: " + data.main.temp + " ˚F</h3>" +
+           "<h3>Humidity: " + data.main.humidity + "%</h3>" +
+           "<h3>Wind Speed:" + data.wind.speed + " mph</h3>" +
            "<img src=http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png>"
 
 };
-
-        var queryURL = "https://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=4396c33210ea436c01b4d4cc2a212e09";
 
