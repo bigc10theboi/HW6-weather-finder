@@ -34,7 +34,7 @@ $(document).ready(function() {
                 var list = data.list;
                 console.log(data)
                 for(var i =0; i < list.length; i += 8 ){
-                    var infoHTML = show(list[i]);
+                    var infoHTML = show2(list[i]);
                     $("#fiveDay").append(infoHTML); 
                 }
             }
@@ -45,12 +45,22 @@ $(document).ready(function() {
 
 //function to display data
 function show(data){
-    return "<header>Current Weather " + data.name + ", " + data.sys.country +"</header>" +
-           "<h3>Weather: " + data.weather[0].main +"</h3>" +
-           "<h3>Description: " + data.weather[0].description +"</h3>" +
-           "<h3>Temperature: " + data.main.temp + " ˚F</h3>" +
-           "<h3>Humidity: " + data.main.humidity + "%</h3>" +
-           "<h3>Wind Speed:" + data.wind.speed + " mph</h3>" +
+    return "<h2>Current Weather " + data.name + ", " + data.sys.country +"</h2>" +
+           "<h4>Weather: " + data.weather[0].main +"</h4>" +
+           "<h4>Description: " + data.weather[0].description +"</h4>" +
+           "<h4>Temperature: " + data.main.temp + " ˚F</h4>" +
+           "<h4>Humidity: " + data.main.humidity + "%</h4>" +
+           "<h4>Wind Speed:" + data.wind.speed + " mph</h4>" +
+           "<img src=http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png>"
+
+};
+
+function show2(data){
+    return "<h4>Weather: " + data.weather[0].main +"</h4>" +
+           "<h4>Description: " + data.weather[0].description +"</h4>" +
+           "<h4>Temperature: " + data.main.temp + " ˚F</h4>" +
+           "<h4>Humidity: " + data.main.humidity + "%</h4>" +
+           "<h4>Wind Speed:" + data.wind.speed + " mph</h4>" +
            "<img src=http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png>"
 
 };
