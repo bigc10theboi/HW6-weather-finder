@@ -1,6 +1,7 @@
 //function for retrieving weather data from API
 $(document).ready(function() {
     $('.search').click(function() {
+        $(".populate").empty();
         var key = '4396c33210ea436c01b4d4cc2a212e09';
         var city = $('#cityName').val().trim();
         console.log(city);
