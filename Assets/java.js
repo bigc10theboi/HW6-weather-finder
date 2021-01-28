@@ -1,6 +1,6 @@
 //function for retrieving weather data from API
 $(document).ready(function() {
-    $('.search').click(function() {
+    $('.current').click(function() {
         $(".populate").empty();
         var key = '4396c33210ea436c01b4d4cc2a212e09';
         var city = $('#cityName').val().trim();
@@ -17,7 +17,7 @@ $(document).ready(function() {
             }
         
         });
-        var search = $(".search");
+        var search = $(".current");
         console.log(search);
         search.on("click", function() {
             console.log("click");
@@ -27,7 +27,26 @@ $(document).ready(function() {
             var searchCity = $(this).attr("id");
             localStorage.setItem(searchCity, task);
         });
+        });
+    });
 
+
+$(document).ready(function() {
+    $('.future').click(function() {
+        $(".populate").empty();
+        var key = '4396c33210ea436c01b4d4cc2a212e09';
+        var city = $('#cityName').val().trim();
+        console.log(city);
+        var search = $(".future");
+        console.log(search);
+        search.on("click", function() {
+            console.log("click");
+            var task = $(this)
+            .siblings("#cityName")
+            .val();
+            var searchCity = $(this).attr("id");
+            localStorage.setItem(searchCity, task);
+        });
         $.ajax({
             url: "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&APPID=" + key + "&units=imperial",
             method: "GET",
@@ -48,10 +67,10 @@ $(document).ready(function() {
 function show(data){
     return "<h2>Current Weather " + data.name + ", " + data.sys.country +"</h2>" +
            "<h4>Weather: " + data.weather[0].main +"</h4>" +
-           "<h4>Description: " + data.weather[0].description +"</h4>" +
            "<h4>Temperature: " + data.main.temp + " ˚F</h4>" +
            "<h4>Humidity: " + data.main.humidity + "%</h4>" +
            "<h4>Wind Speed: " + data.wind.speed + " mph</h4>" +
+           "<h4>UV Index: " + data.main.uv + "</h4>" +
            "<img src=http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png>"
 
 };
@@ -61,10 +80,10 @@ function show2(data){
     //     "Day " + "#fiveday"[i];
     // }
     return "<h4>Weather: " + data.weather[0].main +"</h4>" +
-           "<h4>Description: " + data.weather[0].description +"</h4>" +
            "<h4>Temperature: " + data.main.temp + " ˚F</h4>" +
            "<h4>Humidity: " + data.main.humidity + "%</h4>" +
            "<h4>Wind Speed: " + data.wind.speed + " mph</h4>" +
+           "<h4>UV Index: " + data.main.uv + "</h4>" +
            "<img src=http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png>"
 
 };
