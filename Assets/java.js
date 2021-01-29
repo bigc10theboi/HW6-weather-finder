@@ -106,10 +106,10 @@ function addUVindex(lat, lon){
         var uv = $("<p>").text("UV Index: ");
         var btn = $("<span>").addClass("btn btn-sm").text(response.value);
         // change color depending on uv value
-        if (response.value < 3) {
+        if (response.value <= 3) {
           btn.addClass("btn-success");
         }
-        else if (response.value < 7) {
+        else if (response.value <= 7) {
           btn.addClass("btn-warning");
         }
         else {

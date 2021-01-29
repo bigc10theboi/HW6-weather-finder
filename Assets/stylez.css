@@ -35,13 +35,3 @@ button:hover {
     background-color: grey;
     color: rgb(241, 251, 93);
 }
-
-.favorable {
-    color: green;
-  }
-.moderate {
-    color: orange;
-}
-.severe {
-    color: red;
-}
