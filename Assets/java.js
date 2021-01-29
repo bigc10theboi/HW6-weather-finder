@@ -33,7 +33,16 @@ $(document).ready(function() {
         });
     });
 });
+// function renderLastSearched() {
+//     var city = localStorage.getItem("#cityName");
 
+//     if (!city) {
+//       return;
+//     }
+  
+//     historyList.textContent = city;
+// }
+// renderLastSearched()
 //function calling next five days forecast
 $(document).ready(function() {
     $('.future').click(function() {
@@ -100,8 +109,8 @@ function addUVindex(lat, lon){
       .then(function(response) {
         console.log(response);
 
-        var uv = $("<p>").text("UV Index: ");
-        var btn = $("<span>").addClass("btn btn-sm").text(response.value);
+        var uv = $("<h4>").text("UV Index: ");
+        var btn = $("<span>").addClass("btn btn-md").text(response.value);
         //change color depending on uv index
         if (response.value <= 3) {
           btn.addClass("btn-success");
