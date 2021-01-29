@@ -83,7 +83,7 @@ function show(data){
            "<h4>Temperature: " + data.main.temp + " ˚F</h4>" +
            "<h4>Humidity: " + data.main.humidity + "%</h4>" +
            "<h4>Wind Speed: " + data.wind.speed + " mph</h4>" +
-           "<img src=http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png>"
+           "<img src=https://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png>"
 };
 //five day forecast
 function show2(data){
@@ -92,13 +92,13 @@ function show2(data){
            "<h4>Temperature: " + data.main.temp + " ˚F</h4>" +
            "<h4>Humidity: " + data.main.humidity + "%</h4>" +
            "<h4>Wind Speed: " + data.wind.speed + " mph</h4>" +
-           "<img src=http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png>"
+           "<img src=https://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png>"
 
 };
 //UV function
 function addUVindex(lat, lon){
     var key = '4396c33210ea436c01b4d4cc2a212e09';
-    var UVindex = "http://api.openweathermap.org/data/2.5/uvi?appid=" + key + "&lat="+ lat + "&lon=" + lon 
+    var UVindex = "https://api.openweathermap.org/data/2.5/uvi?appid=" + key + "&lat="+ lat + "&lon=" + lon 
     var weatherEl = $(weather)
 
     $.ajax({
