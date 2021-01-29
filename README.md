@@ -31,4 +31,4 @@ Author: Carter Venne
 
 Github repository: https://github.com/bigc10theboi/HW6-weather-finder
 
-Deployed website: 
+Deployed website: https://bigc10theboi.github.io/HW6-weather-finder/
