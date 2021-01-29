@@ -1,4 +1,4 @@
-//function for retrieving weather data from API
+//function for retrieving current weather
 $(document).ready(function() {
     $('.current').click(function() {
         $(".populate").empty();
@@ -14,6 +14,10 @@ $(document).ready(function() {
                 console.log(data)
                 var infoHTML = show(data)
                 $("#weather").html(infoHTML); 
+                var lat = data.coord.lat
+                var lon = data.coord.lon
+    
+                addUVindex(lat, lon)
             }
         
         });
@@ -27,10 +31,10 @@ $(document).ready(function() {
             var searchCity = $(this).attr("id");
             localStorage.setItem(searchCity, task);
         });
-        });
     });
+});
 
-
+//function calling next five days forecast
 $(document).ready(function() {
     $('.future').click(function() {
         $(".populate").empty();
@@ -63,56 +67,74 @@ $(document).ready(function() {
     });
 });
 
-//function to display data
+//current weather
 function show(data){
-    return "<h2>Current Weather " + data.name + ", " + data.sys.country +"</h2>" +
+    return "<h2>Current weather " + data.name + ", " + data.sys.country +"</h2>" +
            "<h4>Weather: " + data.weather[0].main +"</h4>" +
            "<h4>Temperature: " + data.main.temp + " ˚F</h4>" +
            "<h4>Humidity: " + data.main.humidity + "%</h4>" +
            "<h4>Wind Speed: " + data.wind.speed + " mph</h4>" +
-           "<h4>UV Index: " + data.main.uvi + "</h4>" +
            "<img src=http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png>"
-
 };
-
+//five day forecast
 function show2(data){
     // for (var i = 0; i < "#fiveday".length; i++) {
     //     "Day " + "#fiveday"[i];
     // }
-    return "<h4>Weather: " + data.weather[0].main +"</h4>" +
+    return "<h2>Five day forecast " + data.name + ", " + data.country +"</h2>" + "<h4>Weather: " + data.weather[0].main +"</h4>" +
            "<h4>Temperature: " + data.main.temp + " ˚F</h4>" +
            "<h4>Humidity: " + data.main.humidity + "%</h4>" +
            "<h4>Wind Speed: " + data.wind.speed + " mph</h4>" +
            "<img src=http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png>"
 
 };
+//UV function
+function addUVindex(lat, lon){
+    var key = '4396c33210ea436c01b4d4cc2a212e09';
+    var UVindex = "http://api.openweathermap.org/data/2.5/uvi?appid=" + key + "&lat="+ lat + "&lon=" + lon 
+    var weatherEl = $(weather)
 
-//function to display UV color
-// function colors() {
-//     $(".h4").each(function () {
-//         var UV = data.main.uvi;
-  
-//         if (UV <= 4) {
-//             $(this).addClass("favorable")
-//         }
-//         else if (UV <= 8) {
-//             $(this).addClass("moderate");
-//         }
-//         else if (UV > 8) {
-//             $(this).addClass("severe");
-//         }
-//     })
-// }
-// colors();
+    $.ajax({
+        url: UVindex,
+        method: "GET"
+      })
+
+      .then(function(response) {
+        console.log(response);
+        // storing the data from the AJAX request in the results variable
+
+        var uv = $("<p>").text("UV Index: ");
+        var btn = $("<span>").addClass("btn btn-sm").text(response.value);
+        // change color depending on uv value
+        if (response.value < 3) {
+          btn.addClass("btn-success");
+        }
+        else if (response.value < 7) {
+          btn.addClass("btn-warning");
+        }
+        else {
+          btn.addClass("btn-danger");
+        }
+        $("#today .card-body").append(uv.append(btn));
+        weatherEl.append(uv)
+          
+})
+}
 
 //code for moment date
 var now = moment();
 var dateFormat = "MM/DDDD/YYYY";
 var convertedDate = moment(now, dateFormat);
 var newDate = moment();
+// const dayAfterEpoch = moment(86400000);
 //function to display date//
 function displayCurrentDate() {
   var currentDate = moment().format("DDD, MMMM, YYYY");
   $("#currentDay").text(currentDate);
 }
 displayCurrentDate();
+
+// function displayNextDate() {
+//     $("#nextDay").text(dayAfterEpoch);
+//   }
+//   displayNextDate();
