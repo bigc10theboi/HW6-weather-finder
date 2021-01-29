@@ -78,10 +78,8 @@ function show(data){
 };
 //five day forecast
 function show2(data){
-    // for (var i = 0; i < "#fiveday".length; i++) {
-    //     "Day " + "#fiveday"[i];
-    // }
-    return "<h2>Five day forecast " + data.name + ", " + data.country +"</h2>" + "<h4>Weather: " + data.weather[0].main +"</h4>" +
+    return "<h2>Five day forecast</h2>" +
+     "<h4>Weather: " + data.weather[0].main +"</h4>" +
            "<h4>Temperature: " + data.main.temp + " ˚F</h4>" +
            "<h4>Humidity: " + data.main.humidity + "%</h4>" +
            "<h4>Wind Speed: " + data.wind.speed + " mph</h4>" +
@@ -101,11 +99,10 @@ function addUVindex(lat, lon){
 
       .then(function(response) {
         console.log(response);
-        // storing the data from the AJAX request in the results variable
 
         var uv = $("<p>").text("UV Index: ");
         var btn = $("<span>").addClass("btn btn-sm").text(response.value);
-        // change color depending on uv value
+        //change color depending on uv index
         if (response.value <= 3) {
           btn.addClass("btn-success");
         }

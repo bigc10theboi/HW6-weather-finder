@@ -2,8 +2,7 @@
 Server side APIs assignment
 
 ## My Experience
-
-
+This application utilizes every technique from previous assignments, bootstrap, javascript, css, moment, anmd jquery while adding in an API to draw information from. The application draws info from Openweathermap's API to populate current weather and also has the option to look at the forecast fro the next five days. When looking at the current weather there is an adaptive button displaying UV index that changes with varying levels of UV.
 
 ## User Story
 
@@ -26,10 +25,6 @@ WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
 WHEN I open the weather dashboard
 THEN I am presented with the last searched city forecast
-
-## My experience
-
-
 
 ######
 Author: Carter Venne
