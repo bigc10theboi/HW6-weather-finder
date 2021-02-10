@@ -2,7 +2,7 @@
 Server side APIs assignment
 
 ## My Experience
-This application utilizes every technique from previous assignments (bootstrap, javascript, css, moment, and jquery) while adding in an API to draw information from. The application draws info from Openweathermap's API to populate current weather and also has the option to look at the forecast fro the next five days. When looking at the current weather there is an adaptive button displaying UV index that changes with varying levels of UV. I could get my searches to appear in console but I couldn't figure out local storage adn displaying htem on the page.
+This application utilizes every technique from previous assignments (bootstrap, javascript, css, moment, and jquery) while adding in an API to draw information from. The application draws info from Openweathermap's API to populate current weather and also has the option to look at the forecast fro the next five days. When looking at the current weather there is an adaptive button displaying UV index that changes with varying levels of UV. I could get my searches to appear in console but I couldn't figure out local storage and displaying them on the page.
 
 ## User Story
 
