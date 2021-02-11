@@ -135,7 +135,7 @@ var newDate = moment();
 // const dayAfterEpoch = moment(86400000);
 //function to display date//
 function displayCurrentDate() {
-  var currentDate = moment().format("DDD, MMMM, YYYY");
+  var currentDate = moment().format("DD, MMMM, YYYY");
   $("#currentDay").text(currentDate);
 }
 displayCurrentDate();
