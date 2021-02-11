@@ -29,6 +29,6 @@ THEN I am presented with the last searched city forecast
 ######
 Author: Carter Venne
 
-Github repository: https://github.com/bigc10theboi/HW6-weather-finder
+Github repository: https://github.com/cartervenne/HW6-weather-finder
 
-Deployed website: https://bigc10theboi.github.io/HW6-weather-finder/
+Deployed website: https://cartervenne.github.io/HW6-weather-finder/
